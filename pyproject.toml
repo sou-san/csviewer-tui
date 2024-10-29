@@ -14,7 +14,7 @@ dependencies = [
 ]
 
 [project.scripts]
-cvit = "csviewer_tui:main"
+cvit = "csviewer_tui.__main__:main"
 
 [build-system]
 requires = ["hatchling"]
