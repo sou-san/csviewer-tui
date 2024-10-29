@@ -24,3 +24,7 @@ def is_csv_file(
 )
 def main(file_path: pathlib.Path) -> None:
     Cvit(file_path).run()
+
+
+if __name__ == "__main__":
+    main()
