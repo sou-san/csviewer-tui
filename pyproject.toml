@@ -26,3 +26,23 @@ dev = [
     "ruff>=0.7.1",
     "textual-dev>=1.6.1",
 ]
+
+[tool.ruff]
+line-length = 90
+target-version = "py313"
+
+[tool.ruff.lint]
+select = [
+    "F", # Pyflakes
+    "B", # flake8-bugbear
+    "I", # isort
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "N", # pep8-naming
+    "C901", # mccabe linter (複雑度チェック)
+]
+
+ignore = [
+    "D103", # docstring が無い関数やクラスを許す
+    "E501", # 行あたりの文字数制限を無視する
+]
