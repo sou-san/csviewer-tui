@@ -8,7 +8,7 @@ from csviewer_tui.app import Cvit
 def is_csv_file(
     ctx: click.Context, param: click.Parameter, file_path: pathlib.Path
 ) -> pathlib.Path:
-    if file_path.suffix.lower() == "csv":
+    if file_path.suffix.lower() == ".csv":
         return file_path
 
     raise click.BadArgumentUsage(
