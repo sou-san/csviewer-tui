@@ -3,8 +3,16 @@ import pathlib
 
 from textual.app import App, ComposeResult
 from textual.binding import Binding
+from textual.scrollbar import ScrollBar, ScrollBarRender
 from textual.widgets import Footer, Header
 from textual_fastdatatable import ArrowBackend, DataTable, DataTableBackend
+
+
+class MyScrollBarRender(ScrollBarRender):
+    """Linux console (tty) でも文字化けしないスクロールバー"""
+
+    HORIZONTAL_BARS = [" "]
+    VERTICAL_BARS = [" "]
 
 
 class CsvFileDisplay(DataTable):
@@ -26,6 +34,7 @@ class Cvit(App[None]):
     BINDINGS = [Binding("q", "exit_app", "Exit")]
 
     def __init__(self, file_path: pathlib.Path) -> None:
+        ScrollBar.renderer = MyScrollBarRender
         self.file_path: pathlib.Path = file_path
         super().__init__()
 
