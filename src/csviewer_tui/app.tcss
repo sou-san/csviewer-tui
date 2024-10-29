@@ -1,0 +1,10 @@
+Screen {
+    align: center middle;
+}
+
+CsvFileDisplay {
+    width: auto;
+    height: auto;
+    max-width: 95%;
+    max-height: 95%;
+}
