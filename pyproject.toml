@@ -1,0 +1,17 @@
+[project]
+name = "csviewer-tui"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "sou-san", email = "sou887867@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+csviewer-tui = "csviewer_tui:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
