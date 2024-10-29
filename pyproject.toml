@@ -7,7 +7,11 @@ authors = [
     { name = "sou-san", email = "sou887867@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "click>=8.1.7",
+    "textual>=0.85.1",
+    "textual-fastdatatable>=0.9.0",
+]
 
 [project.scripts]
 cvit = "csviewer_tui:main"
