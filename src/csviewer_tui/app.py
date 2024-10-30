@@ -28,18 +28,18 @@ class CsvFileDisplay(DataTable):
         Binding("f", "page_down", "Page Down"),
     ]
 
-    # 最下部に移動したとき、行末にスクロールをしないように、 textual-fastdatatable の関数のオーバーライド
+    # 最下部に移動したとき、行末にスクロールをしないように、 textual-fastdatatable のメソッドをオーバーライド
     def action_cursor_table_end(self, select: bool = False) -> None:
         self._set_hover_cursor(False)
         self._set_selection_anchor(select)
         self.cursor_coordinate = Coordinate(self.row_count - 1, 0)
         self._scroll_cursor_into_view(animate=True)
 
-    # 1 ページ移動時に一行ずれる問題を解決するために、 textual-fastdatatable の関数をオーバーライド
+    # 1 ページ移動したとき、一行ずれる問題を解決するために、 textual-fastdatatable のメソッドをオーバーライド
     def action_page_up(self, select: bool = False) -> None:
         self.scroll_to(y=self.scroll_y - self.scrollable_content_region.height + 1)
 
-    # 1 ページ移動時に一行ずれる問題を解決するために、 textual-fastdatatable の関数をオーバーライド
+    # 1 ページ移動したとき、一行ずれる問題を解決するために、 textual-fastdatatable のメソッドをオーバーライド
     def action_page_down(self, select: bool = False) -> None:
         self.scroll_to(y=self.scroll_y + self.scrollable_content_region.height - 1)
 
