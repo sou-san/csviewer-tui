@@ -1,5 +1,16 @@
 Screen {
     align: center middle;
+    background: $background;
+}
+
+ScrollableContainer {
+    scrollbar-size: 1 1;
+    scrollbar-background: #000000;
+    scrollbar-background-active: #000000;
+    scrollbar-background-hover: #000000;
+    scrollbar-color: gray;
+    scrollbar-color-active: #00ff00;
+    scrollbar-color-hover: gray;
 }
 
 CsvFileDisplay {
@@ -7,4 +18,46 @@ CsvFileDisplay {
     height: auto;
     max-width: 95%;
     max-height: 95%;
+    border: round #00ff00;
+}
+
+.datatable--header {
+    text-style: none; # Linux console (tty) で見やすくするため
+    color: #000000;
+    background: #00ff00;
+}
+
+.datatable--even-row {
+    background: #00ff00 10%;
+}
+
+Header {
+    text-style: bold;
+    color: #00ff00;
+    background: $background;
+}
+
+HeaderIcon {
+    width: 0;
+    height: 0;
+    padding: 0;
+
+    &:hover {
+        background: $background;
+    }
+}
+
+Footer {
+    background: $background;
+}
+
+FooterKey {
+    background: $background;
+    padding: 0 1 0 0;
+}
+
+.footer-key--key {
+    text-style: bold;
+    color: #00ff00;
+    background: $background;
 }
