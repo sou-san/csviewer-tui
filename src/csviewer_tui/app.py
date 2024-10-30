@@ -35,6 +35,14 @@ class CsvFileDisplay(DataTable):
         self.cursor_coordinate = Coordinate(self.row_count - 1, 0)
         self._scroll_cursor_into_view(animate=True)
 
+    # 1 ページ移動時に一行ずれる問題を解決するために、 textual-fastdatatable の関数をオーバーライド
+    def action_page_up(self, select: bool = False) -> None:
+        self.scroll_to(y=self.scroll_y - self.scrollable_content_region.height + 1)
+
+    # 1 ページ移動時に一行ずれる問題を解決するために、 textual-fastdatatable の関数をオーバーライド
+    def action_page_down(self, select: bool = False) -> None:
+        self.scroll_to(y=self.scroll_y + self.scrollable_content_region.height - 1)
+
 
 class Cvit(App[None]):
     CSS_PATH = "app.tcss"
