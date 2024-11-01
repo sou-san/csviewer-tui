@@ -7,11 +7,19 @@ authors = [
     { name = "sou-san", email = "sou887867@gmail.com" }
 ]
 requires-python = ">=3.13"
+license = { file = "LICENSE" }
+keywords = ["cvit", "csviewer-tui", "csv", "viewer", "tool", "cli", "tui", "terminal"]
 dependencies = [
     "click>=8.1.7",
     "textual>=0.85.1",
     "textual-fastdatatable>=0.9.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/sou-san/csviewer-tui"
+Repository = "https://github.com/sou-san/csviewer-tui"
+Issues = "https://github.com/sou-san/csviewer-tui/issues"
+Documentation = "https://github.com/sou-san/csviewer-tui/blob/main/README.md"
 
 [project.scripts]
 cvit = "csviewer_tui.__main__:main"
