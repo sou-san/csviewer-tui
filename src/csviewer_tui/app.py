@@ -45,7 +45,7 @@ class CsvFileDisplay(DataTable):
 
 
 class Cvit(App[None]):
-    CSS_PATH = "app.tcss"
+    CSS_PATH = pathlib.Path(__file__).parent / "app.tcss"
     ENABLE_COMMAND_PALETTE = False
     BINDINGS = [Binding("q", "exit_app", "Quit")]
 
