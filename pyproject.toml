@@ -11,8 +11,8 @@ license = { file = "LICENSE" }
 keywords = ["cvit", "csviewer-tui", "csv", "viewer", "tool", "cli", "tui", "terminal"]
 dependencies = [
     "click>=8.1.7",
-    "textual>=0.85.1",
-    "textual-fastdatatable>=0.9.0",
+    "textual>=0.88.1",
+    "textual-fastdatatable>=0.10.0",
 ]
 
 [project.urls]
