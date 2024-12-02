@@ -47,7 +47,7 @@ class CsvFileDisplay(DataTable):
 class Cvit(App[None]):
     CSS_PATH = "app.tcss"
     ENABLE_COMMAND_PALETTE = False
-    BINDINGS = [Binding("q", "exit_app", "Exit")]
+    BINDINGS = [Binding("q", "exit_app", "Quit")]
 
     def __init__(self, file_path: pathlib.Path) -> None:
         ScrollBar.renderer = MyScrollBarRender
