@@ -1,0 +1,30 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-toml
+      - id: check-yaml
+      - id: check-added-large-files
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.9.10
+    hooks:
+      # Run the linter.
+      - id: ruff
+        args: [ --fix ]
+      # Run the formatter.
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.15.0  # Use the sha / tag you want to point at
+    hooks:
+    - id: mypy
+      args: [--config-file=pyproject.toml, src]
+      pass_filenames: false
+      additional_dependencies: [
+        "textual>=2.0.0, <3.0.0",
+        "textual-pyfiglet==0.5.5",
+      ]
