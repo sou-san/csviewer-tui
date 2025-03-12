@@ -10,9 +10,9 @@ requires-python = ">=3.13"
 license = { file = "LICENSE" }
 keywords = ["cvit", "csviewer-tui", "csv", "viewer", "tool", "cli", "tui", "terminal"]
 dependencies = [
-    "click>=8.1.7",
-    "textual>=0.88.1",
-    "textual-fastdatatable>=0.10.0",
+    "click>=8.1.7, <9.0.0",
+    "textual>=2.1.2, <3.0.0",
+    "textual-fastdatatable==0.12.0",
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
