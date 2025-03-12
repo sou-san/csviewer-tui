@@ -49,6 +49,9 @@ dev = [
     "textual-dev>=1.7.0",
 ]
 
+[tool.mypy]
+ignore_missing_imports = true
+
 [tool.ruff]
 line-length = 90
 target-version = "py313"
