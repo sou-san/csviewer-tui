@@ -30,10 +30,10 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
-    "mypy>=1.13.0",
+    "mypy>=1.15.0",
     "pre-commit>=4.1.0",
-    "ruff>=0.7.1",
-    "textual-dev>=1.6.1",
+    "ruff>=0.9.10",
+    "textual-dev>=1.7.0",
 ]
 
 [tool.ruff]
