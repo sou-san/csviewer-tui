@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [
     { name = "sou-san", email = "sou887867@gmail.com" }
 ]
-requires-python = ">=3.13"
+requires-python = ">=3.10"
 license = { file = "LICENSE" }
 keywords = ["cvit", "csviewer-tui", "csv", "viewer", "tool", "cli", "tui", "terminal"]
 dependencies = [
@@ -54,7 +54,7 @@ ignore_missing_imports = true
 
 [tool.ruff]
 line-length = 90
-target-version = "py313"
+target-version = "py310"
 
 [tool.ruff.lint]
 select = [
