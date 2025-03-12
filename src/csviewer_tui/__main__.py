@@ -3,6 +3,7 @@ import pathlib
 import click
 
 from csviewer_tui.app import Cvit
+from csviewer_tui.version import CVIT_VERSION
 
 
 def is_csv_file(
@@ -17,6 +18,7 @@ def is_csv_file(
 
 
 @click.command()
+@click.version_option(CVIT_VERSION)
 @click.argument(
     "file_path",
     type=click.Path(exists=True, readable=True, path_type=pathlib.Path),
