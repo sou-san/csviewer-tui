@@ -1,6 +1,6 @@
 [project]
 name = "csviewer-tui"
-version = "0.1.2"
+version = "0.2.0"
 description = "CSViewer-TUI (cvit)"
 readme = "README.md"
 authors = [
