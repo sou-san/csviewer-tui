@@ -9,12 +9,13 @@ from csviewer_tui.version import CVIT_VERSION
 def check_input_file(
     ctx: click.Context, param: click.Parameter, file_path: pathlib.Path
 ) -> pathlib.Path:
-    if file_path.suffix.lower() == ".csv":
-        return file_path
-
-    raise click.BadArgumentUsage(
-        f"{file_path} is invalid file.\nYou must specify a CSV file."
-    )
+    match file_path.suffix.lower():
+        case ".csv" | ".parquet":
+            return file_path
+        case _:
+            raise click.BadArgumentUsage(
+                f"{file_path} is invalid file.\nYou must specify a CSV file or a Parquet file."
+            )
 
 
 @click.command()
@@ -30,6 +31,11 @@ def check_input_file(
     help="Do not treat the first row as a header in a CSV file.",
 )
 def main(file_path: pathlib.Path, no_header: bool) -> None:
+    if no_header and file_path.suffix.lower() == ".parquet":
+        raise click.BadArgumentUsage(
+            "--no-header option cannot specify to a Parquet file."
+        )
+
     Cvit(file_path, has_header=not no_header).run()
 
 

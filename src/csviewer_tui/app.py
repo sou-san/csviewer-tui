@@ -67,9 +67,12 @@ class Cvit(App[None]):
 
     def _create_backend(self) -> DataTableBackend[str]:
         with self.file_path.open(encoding="utf-8") as f:
-            return ArrowBackend.from_records(
-                tuple(csv.reader(f)), has_header=self.has_header
-            )
+            if self.file_path.suffix.lower() == ".csv":
+                return ArrowBackend.from_records(
+                    tuple(csv.reader(f)), has_header=self.has_header
+                )
+
+            return ArrowBackend.from_parquet(self.file_path)
 
     def action_exit_app(self) -> None:
         self.exit()
