@@ -47,7 +47,7 @@ class FileDisplay(DataTable):
 class Cvit(App[None]):
     CSS_PATH = pathlib.Path(__file__).parent / "app.tcss"
     ENABLE_COMMAND_PALETTE = False
-    BINDINGS = [Binding("q", "exit_app", "Quit")]
+    BINDINGS = [Binding("q", "quit", "Quit")]
 
     def __init__(self, file_path: pathlib.Path, has_header: bool) -> None:
         ScrollBar.renderer = MyScrollBarRender
@@ -73,6 +73,3 @@ class Cvit(App[None]):
                 )
 
             return ArrowBackend.from_parquet(self.file_path)
-
-    def action_exit_app(self) -> None:
-        self.exit()
