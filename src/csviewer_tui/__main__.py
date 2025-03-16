@@ -6,7 +6,7 @@ from csviewer_tui.app import Cvit
 from csviewer_tui.version import CVIT_VERSION
 
 
-def is_csv_file(
+def check_input_file(
     ctx: click.Context, param: click.Parameter, file_path: pathlib.Path
 ) -> pathlib.Path:
     if file_path.suffix.lower() == ".csv":
@@ -22,7 +22,7 @@ def is_csv_file(
 @click.argument(
     "file_path",
     type=click.Path(exists=True, readable=True, path_type=pathlib.Path),
-    callback=is_csv_file,
+    callback=check_input_file,
 )
 def main(file_path: pathlib.Path) -> None:
     Cvit(file_path).run()
