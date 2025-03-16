@@ -8,7 +8,7 @@ authors = [
 ]
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
-keywords = ["cvit", "csviewer-tui", "csv", "viewer", "tool", "cli", "tui", "terminal"]
+keywords = ["cvit", "csviewer-tui", "csv", "parquet", "viewer", "tool", "cli", "tui", "terminal"]
 dependencies = [
     "click>=8.1.7, <9.0.0",
     "textual>=2.1.2, <3.0.0",
