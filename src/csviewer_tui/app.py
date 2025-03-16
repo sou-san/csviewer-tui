@@ -49,9 +49,10 @@ class Cvit(App[None]):
     ENABLE_COMMAND_PALETTE = False
     BINDINGS = [Binding("q", "exit_app", "Quit")]
 
-    def __init__(self, file_path: pathlib.Path) -> None:
+    def __init__(self, file_path: pathlib.Path, has_header: bool) -> None:
         ScrollBar.renderer = MyScrollBarRender
         self.file_path: pathlib.Path = file_path
+        self.has_header: bool = has_header
         super().__init__()
 
     def compose(self) -> ComposeResult:
@@ -66,7 +67,9 @@ class Cvit(App[None]):
 
     def _create_backend(self) -> DataTableBackend[str]:
         with self.file_path.open(encoding="utf-8") as f:
-            return ArrowBackend.from_records(tuple(csv.reader(f)), has_header=True)
+            return ArrowBackend.from_records(
+                tuple(csv.reader(f)), has_header=self.has_header
+            )
 
     def action_exit_app(self) -> None:
         self.exit()
