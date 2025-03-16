@@ -1,8 +1,12 @@
+![Python version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)
+![PyPi version](https://img.shields.io/badge/pypi%20package-v0.1.2-green.svg)
+![OS support](https://img.shields.io/badge/OS-Linux%20%7C%20Windows-red.svg)
+
 # CSViewer-TUI (cvit)
 
 ![screenshot](https://github.com/user-attachments/assets/0920d4fc-cf43-48d1-aa65-f0cf49423ca9)
 
-CSV Viewer in TUI using Textual and textual-fastdatatable.
+It is a CSV and Parquet file viewer built using Textual and textual-fastdatatable.
 It can also be used in the Linux console.
 
 ## Usage
