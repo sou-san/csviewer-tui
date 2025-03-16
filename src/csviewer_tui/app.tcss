@@ -13,7 +13,7 @@ ScrollableContainer {
     scrollbar-color-hover: gray;
 }
 
-CsvFileDisplay {
+FileDisplay {
     width: auto;
     height: auto;
     max-width: 95%;

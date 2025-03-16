@@ -16,7 +16,7 @@ class MyScrollBarRender(ScrollBarRender):
     VERTICAL_BARS = [" "]
 
 
-class CsvFileDisplay(DataTable):
+class FileDisplay(DataTable):
     BINDINGS = [
         Binding("k", "cursor_up", "Scroll Up"),
         Binding("j", "cursor_down", "Scroll Down"),
@@ -57,7 +57,7 @@ class Cvit(App[None]):
     def compose(self) -> ComposeResult:
         yield Header(icon="")
         yield Footer()
-        yield CsvFileDisplay(
+        yield FileDisplay(
             backend=self._create_backend(), show_cursor=False, zebra_stripes=True
         )
 
