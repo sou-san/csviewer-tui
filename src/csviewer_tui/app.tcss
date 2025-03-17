@@ -53,12 +53,11 @@ Footer {
     FooterKey {
         background: $background;
         padding: 0 1 0 0;
-    
+
         .footer-key--key {
             text-style: bold;
             color: #00ff00;
             background: $background;
         }
     }
-    
 }
