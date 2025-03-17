@@ -3,14 +3,14 @@ Screen {
     background: $background;
 }
 
-ScrollableContainer {
-    scrollbar-size: 1 1;
+* {
+    scrollbar-size-vertical: 1;
     scrollbar-background: #000000;
     scrollbar-background-active: #000000;
     scrollbar-background-hover: #000000;
     scrollbar-color: gray;
     scrollbar-color-active: #00ff00;
-    scrollbar-color-hover: gray;
+    scrollbar-color-hover: #aaaaaa;
 }
 
 FileDisplay {
